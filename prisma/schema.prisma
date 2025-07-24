@@ -1,0 +1,39 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Club {
+  id      Int      @id @default(autoincrement())
+  name    String   @unique
+  players Player[] // Relação 1:N com Player
+}
+
+model Player {
+  id          Int         @id @default(autoincrement())
+  name        String
+  clubName    String // Chave estrangeira referenciando o nome do Club
+  club        Club        @relation(fields: [clubName], references: [name])
+  nationality String
+  position    String
+  statistics  Statistics? // Relação 1:1 com Statistics, opcional
+}
+
+model Statistics {
+  id        Int    @id @default(autoincrement())
+  Overall   Int
+  Pace      Int
+  Shooting  Int
+  Passing   Int
+  Dribbling Int
+  Defending Int
+  Physical  Int
+  playerId  Int    @unique // Chave estrangeira e única para a relação 1:1
+  player    Player @relation(fields: [playerId], references: [id])
+}

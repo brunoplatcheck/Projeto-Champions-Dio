@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs", // ou "esnext", dependendo da sua configuração
+    "rootDir": "./src", // Ajuste para a pasta raiz do seu código-fonte
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    // ESSAS SÃO AS LINHAS IMPORTANTES PARA A RESOLUÇÃO DE MÓDULOS
+    "moduleResolution": "node", // Garante que o TypeScript procure módulos como o Node.js
+    "resolveJsonModule": true,  // Permite importar arquivos JSON diretamente
+    "allowSyntheticDefaultImports": true // Ajuda com importações de pacotes sem default export
+  },
+  "include": [
+    "src/**/*.ts",
+    "prisma/**/*.ts", // Inclua a pasta prisma para garantir que os tipos sejam reconhecidos
+    "**/*.json", // Permite que os arquivos JSON sejam reconhecidos
+    ".env" // Se você tem um .d.ts para .env
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
