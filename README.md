@@ -1,5 +1,3 @@
-Com certeza! Aqui está o README.md completo no formato Markdown, pronto para você copiar e colar diretamente no seu projeto.
-
 Projeto Champions API
 🚀 Sobre o Projeto
 Este projeto é uma API RESTful desenvolvida com Node.js, TypeScript e Express.js, com o objetivo de gerenciar dados de jogadores e clubes de futebol. Inicialmente desenvolvido como parte de um bootcamp, o projeto foi aprimorado com a implementação de um banco de dados PostgreSQL e o uso do Prisma ORM para persistência de dados, tornando-o mais robusto e performático.
